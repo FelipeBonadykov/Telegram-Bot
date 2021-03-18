@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  converter:
+    image: converter
+    container_name: converter
+    ports:
+    - 8080:8080
+    volumes:
+    - musicdir:/music
+  bot:
+    image: bot
+    container_name: bot
+    volumes:
+    - musicdir:/music
+volumes:
+  musicdir:
+    driver: local
+    
